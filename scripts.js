@@ -8,8 +8,13 @@ var reCC = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5
     var inputs = $('#form').serializeArray();
 
     var foundMatch = false;
+    var empty = false;
 
     inputs.forEach(function(element) {
+      if(element.value === "") {
+        $('#emptyFormModal').modal('show');
+        empty = true;
+      }
       var matchSSN = reSSN.exec(element.value);
       var matchCC = reCC.exec(element.value);
       if(matchSSN || matchCC) {
@@ -17,9 +22,9 @@ var reCC = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5
       }
     });
 
-    if(!foundMatch) {
+    if(!foundMatch && !empty) {
       $('#successModal').modal('show');
-    } else {
+    } else if(foundMatch && !empty) {
       $('#failureModal').modal('show');
     }
 
