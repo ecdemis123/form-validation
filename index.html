@@ -7,13 +7,25 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <!-- header -->
+
+
+  <!-- form information -->
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+          <h1>Welcome to Ellie's Form</h1>
+        </div>
+        <br>
         <form id="form" role="form">
           <div class="form-group">
-            <label for="name">First and Last Name:</label>
-            <input type="text" class="form-control" name="name" id="name">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" name="name" id="firstName">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control" name="name" id="lastname">
           </div>
           <div class="form-group">
             <label for="email">Email:</label>
@@ -23,12 +35,14 @@
             <label for="message">Message:</label>
             <input type="text" class="form-control" name="message" id="message">
           </div>
+          <!-- submit button -->
           <button type="button" class="btn btn-info btn-md" id="submitButton">Submit</button>
         </form>
       </div>
     </div>
   </div>
 
+  <!-- modal that shows if CC or SSN is inputted into form -->
   <div class="modal fade" id="failureModal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -46,7 +60,7 @@
     </div>
   </div>
 
-
+  <!-- modal that shows if there is no SSN or CC -->
   <div class="modal fade" id="successModal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
