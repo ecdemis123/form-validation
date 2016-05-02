@@ -13,13 +13,14 @@ var reCC = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5
       var matchSSN = reSSN.exec(element.value);
       var matchCC = reCC.exec(element.value);
       if(matchSSN || matchCC) {
-        $('#myModal').modal('show');
         foundMatch = true;
       }
     });
 
     if(!foundMatch) {
       $('#successModal').modal('show');
+    } else {
+      $('#failureModal').modal('show');
     }
 
   });
