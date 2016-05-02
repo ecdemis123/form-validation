@@ -1,0 +1,14 @@
+{
+  "name": "form-validation",
+  "homepage": "https://github.com/ecdemis123/form-validation",
+  "authors": [
+    "Eleanor Demis <eleanordemis@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
