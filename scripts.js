@@ -6,15 +6,21 @@ var reCC = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5
   $('#submitButton').click(function(e) {
     e.preventDefault();
     var inputs = $('#form').serializeArray();
-    console.log(inputs);
+
+    var foundMatch = false;
 
     inputs.forEach(function(element) {
-      console.log("element", element);
       var matchSSN = reSSN.exec(element.value);
       var matchCC = reCC.exec(element.value);
       if(matchSSN || matchCC) {
         $('#myModal').modal('show');
+        foundMatch = true;
       }
     });
+
+    if(!foundMatch) {
+      $('#successModal').modal('show');
+    }
+
   });
 });
